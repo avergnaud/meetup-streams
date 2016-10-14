@@ -7,7 +7,7 @@ class Counter {
 
 static int MAX = 1_000_000;
 
-static int valeur;
+static volatile int valeur;
 
 static void inc() {
 for(int i=0;i<MAX;i++)
@@ -34,3 +34,15 @@ es.awaitTermination(1,TimeUnit.MINUTES);
 out.println(Counter.valeur);
 
 }}
+/*
+/home/ubuntu/dev/git/avergnaud/meetup-streams/src/main/java>java racecondition.Inc
+3141652
+/home/ubuntu/dev/git/avergnaud/meetup-streams/src/main/java>java racecondition.Inc
+3106583
+/home/ubuntu/dev/git/avergnaud/meetup-streams/src/main/java>java racecondition.Inc
+3314385
+/home/ubuntu/dev/git/avergnaud/meetup-streams/src/main/java>java racecondition.Inc
+3167911
+
+
+*/
