@@ -24,7 +24,7 @@ public class Test2 {
 		.collect(Collectors.toList());
     }
 
-@Benchmark
+//@Benchmark
 @Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 public void benchmark1() {
@@ -37,7 +37,7 @@ for(Boolean input : cols) {
 
 }
 
-@Benchmark
+//@Benchmark
 @Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 public void benchmark2() {

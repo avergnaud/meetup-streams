@@ -1,4 +1,4 @@
-package somme.generated;
+package prime.generated;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,9 +28,9 @@ import org.openjdk.jmh.infra.BenchmarkParams;
 import org.openjdk.jmh.infra.IterationParams;
 
 import org.openjdk.jmh.infra.generated.Blackhole_jmh;
-import somme.generated.Test2_jmh;
+import prime.generated.Run1_jmh;
 @Generated("org.openjdk.jmh.generators.core.BenchmarkGenerator")
-public final class Test2_benchmark2 {
+public final class Run1_sequential {
 
     boolean p000, p001, p002, p003, p004, p005, p006, p007, p008, p009, p010, p011, p012, p013, p014, p015;
     boolean p016, p017, p018, p019, p020, p021, p022, p023, p024, p025, p026, p027, p028, p029, p030, p031;
@@ -50,26 +50,26 @@ public final class Test2_benchmark2 {
     boolean p240, p241, p242, p243, p244, p245, p246, p247, p248, p249, p250, p251, p252, p253, p254, p255;
     int startRndMask;
 
-    public Collection<ThroughputResult> benchmark2_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<ThroughputResult> sequential_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            Test2_jmh l_test20_0 = _jmh_tryInit_f_test20_0(control, threadParams);
+            Run1_jmh l_run10_0 = _jmh_tryInit_f_run10_0(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_test20_0.benchmark2();
+                l_run10_0.sequential();
             }
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
-            benchmark2_thrpt_jmhStub(control, res, l_test20_0, l_blackhole1_1);
+            sequential_thrpt_jmhStub(control, res, l_run10_0, l_blackhole1_1);
             res.operations /= control.iterationParams.getBatchSize();
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_test20_0.benchmark2();
+                    l_run10_0.sequential();
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -77,22 +77,22 @@ public final class Test2_benchmark2 {
             }
 
             if (control.isLastIteration()) {
-                f_test20_0 = null;
+                f_run10_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<ThroughputResult> results = new ArrayList<ThroughputResult>();
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "benchmark2", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "sequential", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void benchmark2_thrpt_jmhStub(InfraControl control, RawResults result, Test2_jmh l_test20_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void sequential_thrpt_jmhStub(InfraControl control, RawResults result, Run1_jmh l_run10_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_test20_0.benchmark2();
+            l_run10_0.sequential();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -101,26 +101,26 @@ public final class Test2_benchmark2 {
     }
 
 
-    public Collection<AverageTimeResult> benchmark2_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<AverageTimeResult> sequential_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            Test2_jmh l_test20_0 = _jmh_tryInit_f_test20_0(control, threadParams);
+            Run1_jmh l_run10_0 = _jmh_tryInit_f_run10_0(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_test20_0.benchmark2();
+                l_run10_0.sequential();
             }
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
-            benchmark2_avgt_jmhStub(control, res, l_test20_0, l_blackhole1_1);
+            sequential_avgt_jmhStub(control, res, l_run10_0, l_blackhole1_1);
             res.operations /= control.iterationParams.getBatchSize();
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_test20_0.benchmark2();
+                    l_run10_0.sequential();
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -128,22 +128,22 @@ public final class Test2_benchmark2 {
             }
 
             if (control.isLastIteration()) {
-                f_test20_0 = null;
+                f_run10_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<AverageTimeResult> results = new ArrayList<AverageTimeResult>();
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "benchmark2", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "sequential", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void benchmark2_avgt_jmhStub(InfraControl control, RawResults result, Test2_jmh l_test20_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void sequential_avgt_jmhStub(InfraControl control, RawResults result, Run1_jmh l_run10_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_test20_0.benchmark2();
+            l_run10_0.sequential();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -152,27 +152,27 @@ public final class Test2_benchmark2 {
     }
 
 
-    public Collection<SampleTimeResult> benchmark2_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<SampleTimeResult> sequential_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            Test2_jmh l_test20_0 = _jmh_tryInit_f_test20_0(control, threadParams);
+            Run1_jmh l_run10_0 = _jmh_tryInit_f_run10_0(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_test20_0.benchmark2();
+                l_run10_0.sequential();
             }
 
             int targetSamples = (int) (control.getDuration(TimeUnit.MILLISECONDS) * 20); // at max, 20 timestamps per millisecond
             int batchSize = control.iterationParams.getBatchSize();
             SampleBuffer buffer = new SampleBuffer();
-            benchmark2_sample_jmhStub(control, buffer, targetSamples, control.benchmarkParams.getOpsPerInvocation(), batchSize, l_test20_0, l_blackhole1_1);
+            sequential_sample_jmhStub(control, buffer, targetSamples, control.benchmarkParams.getOpsPerInvocation(), batchSize, l_run10_0, l_blackhole1_1);
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_test20_0.benchmark2();
+                    l_run10_0.sequential();
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -180,17 +180,17 @@ public final class Test2_benchmark2 {
             }
 
             if (control.isLastIteration()) {
-                f_test20_0 = null;
+                f_run10_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<SampleTimeResult> results = new ArrayList<SampleTimeResult>();
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "benchmark2", buffer, control.benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "sequential", buffer, control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void benchmark2_sample_jmhStub(InfraControl control, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Test2_jmh l_test20_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void sequential_sample_jmhStub(InfraControl control, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Run1_jmh l_run10_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         int rnd = (int)System.nanoTime();
         int rndMask = startRndMask;
@@ -204,7 +204,7 @@ public final class Test2_benchmark2 {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                l_test20_0.benchmark2();
+                l_run10_0.sequential();
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -219,36 +219,36 @@ public final class Test2_benchmark2 {
     }
 
 
-    public Collection<SingleShotResult> benchmark2_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<SingleShotResult> sequential_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            Test2_jmh l_test20_0 = _jmh_tryInit_f_test20_0(control, threadParams);
+            Run1_jmh l_run10_0 = _jmh_tryInit_f_run10_0(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
             int batchSize = control.iterationParams.getBatchSize();
-            benchmark2_ss_jmhStub(control, batchSize, res, l_test20_0, l_blackhole1_1);
+            sequential_ss_jmhStub(control, batchSize, res, l_run10_0, l_blackhole1_1);
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_test20_0 = null;
+                f_run10_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<SingleShotResult> results = new ArrayList<SingleShotResult>();
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "benchmark2", res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "sequential", res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void benchmark2_ss_jmhStub(InfraControl control, int batchSize, RawResults result, Test2_jmh l_test20_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void sequential_ss_jmhStub(InfraControl control, int batchSize, RawResults result, Run1_jmh l_run10_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            l_test20_0.benchmark2();
+            l_run10_0.sequential();
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
@@ -266,14 +266,13 @@ public final class Test2_benchmark2 {
         return val;
     }
     
-    Test2_jmh f_test20_0;
+    Run1_jmh f_run10_0;
     
-    Test2_jmh _jmh_tryInit_f_test20_0(InfraControl control, ThreadParams threadParams) throws Throwable {
-        Test2_jmh val = f_test20_0;
+    Run1_jmh _jmh_tryInit_f_run10_0(InfraControl control, ThreadParams threadParams) throws Throwable {
+        Run1_jmh val = f_run10_0;
         if (val == null) {
-            val = new Test2_jmh();
-            val.prepare();
-            f_test20_0 = val;
+            val = new Run1_jmh();
+            f_run10_0 = val;
         }
         return val;
     }
