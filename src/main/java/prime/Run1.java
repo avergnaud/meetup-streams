@@ -24,7 +24,7 @@ private boolean isPrime(long n) {
 				.noneMatch(divisor -> n % divisor == 0);
 }
 
-@Benchmark
+//@Benchmark
 @Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 public void sequential() {
@@ -34,7 +34,7 @@ public void sequential() {
 	out.println("sequential stream result: " + l + " primes before " + MAX);
 }
 
-@Benchmark
+//@Benchmark
 @Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 public void parallel() {
