@@ -14,8 +14,10 @@ import org.openjdk.jmh.annotations.*;
 import java.util.concurrent.*;
 /*
 http://blog.soat.fr/2012/11/java-performances-33-optimisation-de-code/
-"Si vous souhaitez convertir une chaîne de caractère en primitif, il est préférable d’utiliser la méthode parseX() des classes
-Integer, Long, Float, Double et Boolean, où X est le nom de la classe, au lieu de la méthode valueOf(), qui retourne une nouvelle instance.
+"Si vous souhaitez convertir une chaîne de caractère en primitif, il est préférable
+d’utiliser la méthode parseX() des classes
+Integer, Long, Float, Double et Boolean, où X est le nom de la classe, au lieu de la
+méthode valueOf(), qui retourne une nouvelle instance.
 
 Bien évidemment, si vous souhaitez obtenir un objet, vous devrez utiliser valueOf().
 Néanmoins, il est bon de garder à l’esprit qu’une telle conversion est couteuse."

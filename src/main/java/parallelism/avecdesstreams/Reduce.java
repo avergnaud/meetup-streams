@@ -22,7 +22,7 @@ public class Reduce {
 
 	static int MAX = 10_000_000;
 
-	//@Benchmark
+	@Benchmark
 	@Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	@Measurement(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	public void sequentiel() {
@@ -35,7 +35,7 @@ public class Reduce {
 	/*
 ne fonctionne pas avec jmh ?
 	java -jar target/benchmarks.jar -Djava.util.concurrent.ForkJoinPool.common.parallelism=1 */
-	//@Benchmark
+	@Benchmark
 	@Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	@Measurement(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	public void parallel() {
